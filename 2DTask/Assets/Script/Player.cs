@@ -5,7 +5,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField]GameObject obj;
     [SerializeField] float _x = 0f;
-    [SerializeField] float _y = 0;
+    [SerializeField] float _y = 0f;
+    public int _Hp = 100;
     bool isJumping = false;
     float t = 0f; //Œo‰ßŠÔ ( 0.0 -> 1.0 )
     Vector3 nextPos; //Ÿ‚Éİ’è‚³‚ê‚éÀ•W
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
             return;
         }
     }
+
     void Jump()
     {
         nextPos = transform.position;
