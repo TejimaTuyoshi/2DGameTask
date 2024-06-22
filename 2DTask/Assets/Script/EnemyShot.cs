@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyShot : MonoBehaviour
 {
     [SerializeField] GameObject obj;
-    public GameObject bullet;
     [SerializeField] float _x = 0f;
     [SerializeField] float _y = 0f;
     [SerializeField] float _playerX = 0f;
     [SerializeField] float _playerY = 0f;
-    [SerializeField] float _bulletX = 0f;
-    [SerializeField] float _bulletY = 0f;
     [SerializeField] float m_x = 0f;
     [SerializeField] float m_y = 0f;
     [SerializeField] Player _player;
@@ -40,7 +38,7 @@ public class EnemyShot : MonoBehaviour
         }
         if (m_x < 5 && m_y < 2)
         {
-            bullet = Instantiate(obj, new Vector3(_x, _y, 0), Quaternion.identity);
+            Instantiate(obj, new Vector3(_x, _y, 0), Quaternion.identity);
         }
     }
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]GameObject obj;
+    [SerializeField]GameObject enemy;
     [SerializeField] float _x = 0f;
     [SerializeField] float _y = 0f;
-    public int _Hp = 100;
+    [SerializeField]int _Hp = 100;
     bool isJumping = false;
     float t = 0f; //Œo‰ßŠÔ ( 0.0 -> 1.0 )
     Vector3 nextPos; //Ÿ‚Éİ’è‚³‚ê‚éÀ•W
@@ -63,5 +64,10 @@ public class Player : MonoBehaviour
             t = 0f;
             isJumping = false;
         }
+    }
+
+    public void MinusHP()
+    {
+        _Hp--;
     }
 }

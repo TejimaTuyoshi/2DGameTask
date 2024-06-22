@@ -100,6 +100,4 @@ MonoBehaviour:
   obj: {fileID: 5825855413326064341, guid: 6a46a7e0a85688642856854632015765, type: 3}
   _x: 0
   _y: 0
-  m_x: 0
-  m_y: 0
-  _Hp: 5
+  _Hp: 0

@@ -60,7 +60,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\HitBox.cs" />
     <Compile Include="Assets\Script\StartCreate.cs" />
     <Compile Include="Assets\Script\EnemyShot.cs" />
     <Compile Include="Assets\Script\BulletShot.cs" />
