@@ -5,11 +5,11 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BulletShot : MonoBehaviour
 {
-    Player player;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.Find("Player");
     }
 
     bool isHitRect(Transform target)
@@ -27,7 +27,7 @@ public class BulletShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHitRect(transform))
+        if (isHitRect(player.transform))
         {
             //player.MinusHP();
         }
