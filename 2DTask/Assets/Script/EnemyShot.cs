@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyShot : MonoBehaviour
 {
     [SerializeField] GameObject obj;
+    [SerializeField] int _Hp = 3;
     [SerializeField] float _x = 0f;
     [SerializeField] float _y = 0f;
     [SerializeField] float _playerX = 0f;
@@ -40,5 +41,13 @@ public class EnemyShot : MonoBehaviour
         {
             Instantiate(obj, new Vector3(_x, _y, 0), Quaternion.identity);
         }
+        if (_Hp == 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+    public void MinusHP()
+    {
+        _Hp--;
     }
 }

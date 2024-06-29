@@ -4,7 +4,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]GameObject obj;
-    [SerializeField]GameObject enemy;
     [SerializeField] float _x = 0f;
     [SerializeField] float _y = 0f;
     [SerializeField]int _Hp = 100;
