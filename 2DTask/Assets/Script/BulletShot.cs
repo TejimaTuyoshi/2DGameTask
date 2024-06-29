@@ -1,35 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BulletShot : MonoBehaviour
 {
-    GameObject player;
+    Player _player = null;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        _player = GameObject.FindObjectOfType<Player>();
     }
 
-    bool isHitRect(Transform target)
-    {
-        if (Mathf.Abs(this.transform.position.x - target.transform.position.x) < (target.localScale.x + this.transform.localScale.x) / 2 &&
-           Mathf.Abs(this.transform.position.y - target.transform.position.y) < (target.localScale.y + this.transform.localScale.y) / 2)
-        {
-            Debug.Log(target.name);
-            //player = GetComponent<Player>();
-            return true;
-        }
-        return false;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isHitRect(player.transform))
+        if (Mathf.Abs(this.transform.position.x - _player.transform.transform.position.x) < (_player.transform.localScale.x + this.transform.localScale.x) / 2 &&
+           Mathf.Abs(this.transform.position.y - _player.transform.transform.position.y) < (_player.transform.localScale.y + this.transform.localScale.y) / 2)
         {
-            //player.MinusHP();
+            _player.MinusHP();
+            Destroy(gameObject);
         }
     }
     void FixedUpdate()
