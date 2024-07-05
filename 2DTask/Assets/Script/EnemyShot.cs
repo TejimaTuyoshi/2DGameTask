@@ -10,6 +10,7 @@ public class EnemyShot : MonoBehaviour
     [SerializeField] float playerY = 0f;
     [SerializeField] float distanceX = 0f;
     [SerializeField] float distanceY = 0f;
+    float time = 0f; //Œo‰ßŽžŠÔ ( 0.0 -> 1.0 )
     [SerializeField] Player _player;
     void Update()
     {
@@ -21,7 +22,15 @@ public class EnemyShot : MonoBehaviour
         distanceY = playerY - y;
         if (distanceX < 0){distanceX *= -1;}
         if (distanceY < 0){distanceY *= -1;}
-        if (distanceX < 5 && distanceY < 2){Instantiate(obj, new Vector3(x, y, 0), Quaternion.identity);}
+        if (distanceX < 5 && distanceY < 2)
+        {
+            time += Time.deltaTime;
+            if (time >= 1)
+            {
+                time = 0;
+                Instantiate(obj, new Vector3(x, y, 0), Quaternion.identity);
+            }
+        }
         if (hp == 0){this.gameObject.SetActive(false);}
     }
     public void MinusHP(){hp--;}

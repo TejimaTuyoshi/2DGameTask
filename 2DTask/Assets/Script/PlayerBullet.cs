@@ -17,5 +17,5 @@ public class PlayerBullet : MonoBehaviour
             }
         }
     }
-    void FixedUpdate(){transform.position += transform.TransformDirection(Vector2.right) * 1f;}
+    void FixedUpdate(){transform.position += transform.TransformDirection(Vector2.right) * 0.5f;}
 }

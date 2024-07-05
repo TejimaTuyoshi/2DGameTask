@@ -12,5 +12,5 @@ public class BulletShot : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void FixedUpdate(){transform.position += transform.TransformDirection(Vector2.left) * 1f;}
+    void FixedUpdate(){transform.position += transform.TransformDirection(Vector2.left) * 0.5f;}
 }
