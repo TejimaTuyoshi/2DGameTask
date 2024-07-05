@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject obj;
-    [SerializeField] float x = 0f;
-    [SerializeField] float y = 0f;
+    [SerializeField] float posX = 0f;
+    [SerializeField] float posY = 0f;
     [SerializeField] int hp = 100;
     bool isJumping = false;
     float time = 0f; //åoâﬂéûä‘ ( 0.0 -> 1.0 )
@@ -16,11 +15,11 @@ public class Player : MonoBehaviour
     float distortion = 1f; // ã»ê¸ÇÃÇ‰Ç™Ç›
     void Update()
     {
-        x = transform.position.x;
-        y = transform.position.y;
+        posX = transform.position.x;
+        posY = transform.position.y;
         if (Input.GetKeyDown("z"))
         {
-            Instantiate(obj, new Vector3(x, y, 0), Quaternion.identity);
+            Instantiate(obj, new Vector3(posX, posY, 0), Quaternion.identity);
         }
         if (Input.GetKeyDown("a"))
         {
@@ -30,7 +29,7 @@ public class Player : MonoBehaviour
         {
             transform.position += transform.TransformDirection(Vector2.right) * 1f;
         }
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space")&& isJumping == false)
         {
             isJumping = true;
             firstPos = transform.position;

@@ -1,11 +1,11 @@
 using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
-    Vector3 _power = Vector3.right;
-    public void SetVector(Vector3 vec){_power = vec;}
+    Vector3 power = Vector3.right;
+    public void SetVector(Vector3 vec){power = vec;}
     void Update()
     {
-        this.transform.position += _power * 5 * Time.deltaTime;
+        this.transform.position += power * 5 * Time.deltaTime;
         var list = GameObject.FindObjectsOfType<EnemyShot>();
         foreach (var enemy in list)
         {
