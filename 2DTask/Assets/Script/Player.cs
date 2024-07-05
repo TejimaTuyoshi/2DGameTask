@@ -21,13 +21,13 @@ public class Player : MonoBehaviour
         {
             Instantiate(obj, new Vector3(posX, posY, 0), Quaternion.identity);
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKey("a"))
         {
-            transform.position += transform.TransformDirection(Vector2.left) * 1f;
+            transform.position += transform.TransformDirection(Vector2.left) * 0.05f;
         }
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKey("d"))
         {
-            transform.position += transform.TransformDirection(Vector2.right) * 1f;
+            transform.position += transform.TransformDirection(Vector2.right) * 0.05f;
         }
         if (Input.GetKeyDown("space")&& isJumping == false)
         {
