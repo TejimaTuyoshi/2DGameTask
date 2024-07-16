@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject obj;
@@ -17,6 +18,14 @@ public class Player : MonoBehaviour
     {
         posX = transform.position.x;
         posY = transform.position.y;
+        Vector2 pos = transform.position;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDir = mousePos - pos;
+
+        float _radian = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        this.gameObject.transform.rotation = Quaternion.AngleAxis(_radian * 3 / Mathf.PI, new Vector3(0, 0, 1));
+
         if (Input.GetKeyDown("z"))
         {
             Instantiate(obj, new Vector3(posX, posY, 0), Quaternion.identity);
