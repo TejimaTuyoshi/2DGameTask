@@ -22,13 +22,12 @@ public class Player : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 lookDir = mousePos - pos;
 
-        float _radian = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float _radian = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
         this.gameObject.transform.rotation = Quaternion.AngleAxis(_radian * 3 / Mathf.PI, new Vector3(0, 0, 1));
-
         if (Input.GetKeyDown("z"))
         {
-            Instantiate(obj, new Vector3(posX, posY, 0), Quaternion.identity);
+            Instantiate(obj, new Vector3(posX, posY, 0), Quaternion.AngleAxis(_radian * 3 / Mathf.PI, new Vector3(0, 0, 1)));
         }
         if (Input.GetKey("a"))
         {
