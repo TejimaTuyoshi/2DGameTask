@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 58
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 52
+  controlID: 59
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 53
+  controlID: 40
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -764,9 +764,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 8c610000
+      m_SelectedIDs: bc0d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffff
+      m_ExpandedIDs: 8ef9ffffd6f9ffff1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -929,7 +929,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 486
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -980,7 +980,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Script
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -988,15 +988,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\vantan\2DTask\2DTask
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: da610000
-    m_LastClickedID: 25050
+    m_SelectedIDs: d8610000
+    m_LastClickedID: 25048
     m_ExpandedIDs: 00000000d661000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
