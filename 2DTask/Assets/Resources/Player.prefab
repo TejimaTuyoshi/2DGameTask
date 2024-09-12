@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 5825855413326064341, guid: 6a46a7e0a85688642856854632015765, type: 3}
-  _x: 0
-  _y: 0
-  _Hp: 0
+  laser: {fileID: 107501119610180167, guid: 7d30d8f33b18c3f4b9f9d60fd56c4f06, type: 3}
+  posX: 0
+  posY: 0
+  hp: 100
