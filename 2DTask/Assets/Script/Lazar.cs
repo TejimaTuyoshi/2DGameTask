@@ -35,6 +35,18 @@ public class Lazar : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
+        Enemy();
+        AssaultEnemy();
+        Ammo();
+
+        if (_timer > _appear)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void Enemy()
+    {
         if (_timer > _hitTime && !_isHit)
         {
             var enList = GameObject.FindObjectsOfType<EnemyShot>();
@@ -60,9 +72,42 @@ public class Lazar : MonoBehaviour
                     enemy.MinusHP();
                 }
             }
+        }
+    }
 
-            var asList = GameObject.FindObjectsOfType<EnemyAssault>();
-            foreach (var enemy in asList)
+    void AssaultEnemy()
+    {
+        var asList = GameObject.FindObjectsOfType<EnemyAssault>();
+        foreach (var enemy in asList)
+        {
+            //ü•ª‚Æ‹éŒ`‚Ì”»’è
+            bool isHit = false;
+
+            Vector3 posA = this.transform.position;
+            Vector3 posB = this.transform.position + this.transform.rotation * Vector3.right * 30;
+
+            Vector3 lefttop = enemy.transform.position + new Vector3(-enemy.transform.localScale.x / 2.0f, -enemy.transform.localScale.y / 2.0f);
+            Vector3 righttop = enemy.transform.position + new Vector3(enemy.transform.localScale.x / 2.0f, -enemy.transform.localScale.y / 2.0f);
+            Vector3 leftbottom = enemy.transform.position + new Vector3(-enemy.transform.localScale.x / 2.0f, +enemy.transform.localScale.y / 2.0f);
+            Vector3 rightbottom = enemy.transform.position + new Vector3(enemy.transform.localScale.x / 2.0f, +enemy.transform.localScale.y / 2.0f);
+            if (IsCross(lefttop, leftbottom, posA, posB)) isHit = true;
+            if (IsCross(righttop, rightbottom, posA, posB)) isHit = true;
+            if (IsCross(rightbottom, leftbottom, posA, posB)) isHit = true;
+            if (IsCross(lefttop, righttop, posA, posB)) isHit = true;
+
+            if (isHit)
+            {
+                enemy.MinusHP();
+            }
+        }
+    }
+
+    void Ammo()
+    {
+        if (_timer > _hitTime && !_isHit)
+        {
+            var enList = GameObject.FindObjectsOfType<BulletShot>();
+            foreach (var enemy in enList)
             {
                 //ü•ª‚Æ‹éŒ`‚Ì”»’è
                 bool isHit = false;
@@ -81,15 +126,9 @@ public class Lazar : MonoBehaviour
 
                 if (isHit)
                 {
-                    enemy.MinusHP();
+                    enemy.gameObject.SetActive(false);
                 }
             }
-
-        }
-
-        if (_timer > _appear)
-        {
-            Destroy(this.gameObject);
         }
     }
 }
